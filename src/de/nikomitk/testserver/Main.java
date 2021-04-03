@@ -17,9 +17,10 @@ public class Main {
 	    ServerSocket serverSocket = new ServerSocket(port);
         System.out.println("Server running on port: " + port);
 	    while(true){
+            System.out.println("Schleifenanfang");
 	        Socket s = serverSocket.accept();
             BufferedReader fromClient = new BufferedReader(new InputStreamReader(s.getInputStream()));
-            System.out.println(fromClient.read());
+            System.out.println(fromClient.readLine());
             s.close();
         }
     }
